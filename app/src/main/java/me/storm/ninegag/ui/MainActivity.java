@@ -11,8 +11,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import me.storm.ninegag.R;
 import me.storm.ninegag.model.Category;
 import me.storm.ninegag.ui.fragment.BaseFragment;
@@ -25,13 +25,13 @@ import me.storm.ninegag.view.FoldingDrawerLayout;
  * Created by storm on 14-3-24.
  */
 public class MainActivity extends BaseActivity {
-    @InjectView(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     FoldingDrawerLayout mDrawerLayout;
 
-    @InjectView(R.id.content_frame)
+    @BindView(R.id.content_frame)
     FrameLayout contentLayout;
 
-    @InjectView(R.id.blur_image)
+    @BindView(R.id.blur_image)
     ImageView blurImage;
 
     private BlurFoldingActionBarToggle mDrawerToggle;
@@ -45,7 +45,7 @@ public class MainActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         actionBar.setIcon(R.drawable.ic_actionbar);
         mDrawerLayout.setScrimColor(Color.argb(100, 255, 255, 255));

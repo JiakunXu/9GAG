@@ -9,8 +9,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingProgressListener;
 import com.nostra13.universalimageloader.core.assist.SimpleImageLoadingListener;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import me.storm.ninegag.R;
 import me.storm.ninegag.view.ProgressWheel;
 import me.storm.ninegag.view.swipeback.SwipeBackActivity;
@@ -23,10 +23,10 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 public class ImageViewActivity extends SwipeBackActivity {
     public static final String IMAGE_URL = "image_url";
 
-    @InjectView(R.id.photoView)
+    @BindView(R.id.photoView)
     PhotoView photoView;
 
-    @InjectView(R.id.progressWheel)
+    @BindView(R.id.progressWheel)
     ProgressWheel progressWheel;
 
     private PhotoViewAttacher mAttacher;
@@ -34,7 +34,7 @@ public class ImageViewActivity extends SwipeBackActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imageview);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setTitle(R.string.view_big_image);
 

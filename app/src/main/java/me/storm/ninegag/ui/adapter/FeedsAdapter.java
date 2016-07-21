@@ -15,8 +15,8 @@ import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.etsy.android.grid.StaggeredGridView;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import me.storm.ninegag.R;
 import me.storm.ninegag.data.ImageCacheManager;
 import me.storm.ninegag.model.Feed;
@@ -84,16 +84,16 @@ public class FeedsAdapter extends CursorAdapter {
     }
 
     static class Holder {
-        @InjectView(R.id.iv_normal)
+        @BindView(R.id.iv_normal)
         ImageView image;
 
-        @InjectView(R.id.tv_caption)
+        @BindView(R.id.tv_caption)
         TextView caption;
 
         public ImageLoader.ImageContainer imageRequest;
 
         public Holder(View view) {
-            ButterKnife.inject(this, view);
+            ButterKnife.bind(this, view);
         }
     }
 }

@@ -21,8 +21,8 @@ import com.nhaarman.listviewanimations.swinginadapters.AnimationAdapter;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import me.storm.ninegag.App;
 import me.storm.ninegag.R;
 import me.storm.ninegag.api.GagApi;
@@ -46,10 +46,10 @@ import me.storm.ninegag.view.PageStaggeredGridView;
 public class FeedsFragment extends BaseFragment implements LoaderManager.LoaderCallbacks<Cursor>, SwipeRefreshLayout.OnRefreshListener {
     public static final String EXTRA_CATEGORY = "extra_category";
 
-    @InjectView(R.id.swipe_container)
+    @BindView(R.id.swipe_container)
     SwipeRefreshLayout mSwipeLayout;
 
-    @InjectView(R.id.grid_view)
+    @BindView(R.id.grid_view)
     PageStaggeredGridView gridView;
 
     private MenuItem mRefreshItem;
@@ -76,7 +76,7 @@ public class FeedsFragment extends BaseFragment implements LoaderManager.LoaderC
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View contentView = inflater.inflate(R.layout.fragment_feed, container, false);
-        ButterKnife.inject(this, contentView);
+        ButterKnife.bind(this, contentView);
 
         parseArgument();
         mDataHelper = new FeedsDataHelper(App.getContext(), mCategory);

@@ -1,1 +1,2 @@
-include ':app', ':extras:ShimmerAndroid'
+include ':app'
+//, ':extras:ShimmerAndroid'
